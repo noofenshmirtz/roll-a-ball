@@ -36,11 +36,4 @@ public class PlayerController : MonoBehaviour
             count= count + 1;
         }
     }
-
-    
-
-
-    Add a private int count variable to count how many pick-ups are collected.
-• Add the method Start, and initialise this variable to 0.
-• Add 1 to this value every time a pick-up collides with the player.
 }
