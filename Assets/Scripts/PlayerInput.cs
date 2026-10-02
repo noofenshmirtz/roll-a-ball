@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private int count;
 
-    // FIX 1: Capitalized 'S' and added () parentheses
     void Start()
     {
         count = 0;
@@ -24,13 +23,11 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3(moveValue.x, 0.0f, moveValue.y);
 
-        // FIX 2: Rejoined Time.fixedDeltaTime onto one line without spaces
         GetComponent<Rigidbody>().AddForce(movement * speed * Time.fixedDeltaTime);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // FIX 3: Removed leading/trailing spaces inside "PickUp"
         if (other.gameObject.tag == "PickUp")
         {
             other.gameObject.SetActive(false);
