@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using TMPRO;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private int count;
     private int numPickups = 3;
-    public TextMeshProUGUI ScoreText;
-    public TextMeshProUGUI WinText;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI winText;
     
 
 
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count = count + 1;
+            SetCountText();
         }
     }
 
