@@ -13,14 +13,13 @@ public class PlayerController : MonoBehaviour
     private int numPickups = 3;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI winText;
-    
-
 
     void Start()
     {
         count = 0;
-        winText.text = "";
-        SetCountText ();
+        // Turn the win text completely off when the game starts
+        winText.gameObject.SetActive(false);
+        SetCountText();
     }
 
     void OnMove(InputValue value)
@@ -31,7 +30,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 movement = new Vector3(moveValue.x, 0.0f, moveValue.y);
-
         GetComponent<Rigidbody>().AddForce(movement * speed * Time.fixedDeltaTime);
     }
 
@@ -45,10 +43,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void SetCountText () {
-        scoreText . text = " Score : " + count . ToString () ;
-        if( count >= numPickups ) {
-            winText . text = " You win ! " ;
+    private void SetCountText() 
+    {
+        scoreText.text = "Score: " + count.ToString();
+        if (count >= numPickups) 
+        {
+            // Turn the win text back on when winning requirements are met!
+            winText.gameObject.SetActive(true);
         }
     }  
 }
