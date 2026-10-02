@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private int count;
 
-    void start{
+    void Start{
         count = 0;
     }
 
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == " PickUp ")
+        if (other.gameObject.tag == "PickUp ")
         {
             other.gameObject.SetActive(false);
             count= count + 1;
