@@ -12,7 +12,7 @@ public float speed;
 void OnMove(InputValue value)
     {
         moveValue = value.Get<Vector2>();
-        }
+        };
 
 void FixedUpdate()
     {
