@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 moveValue;
     public float speed;
+    private int count;
+
+    void start{
+        count = 0;
+    }
 
     void OnMove(InputValue value)
     {
@@ -28,6 +33,14 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == " PickUp ")
         {
             other.gameObject.SetActive(false);
+            count= count + 1;
         }
     }
+
+    
+
+
+    Add a private int count variable to count how many pick-ups are collected.
+• Add the method Start, and initialise this variable to 0.
+• Add 1 to this value every time a pick-up collides with the player.
 }
